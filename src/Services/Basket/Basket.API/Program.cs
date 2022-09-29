@@ -18,6 +18,10 @@ builder.Services.AddStackExchangeRedisCache(options =>
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 
+//builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
+//                (o => o.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -10,6 +10,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.9" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,10 +19,15 @@
     <None Remove="Entities\" />
     <None Remove="Controllers\" />
     <None Remove="Repositories\" />
+    <None Remove="Grpc.AspNetCore" />
+    <None Remove="GrpcServices\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Controllers\" />
     <Folder Include="Repositories\" />
+    <Folder Include="GrpcServices\" />
   </ItemGroup>
+  
+
 </Project>
