@@ -24,6 +24,8 @@ namespace Discount.API.Controllers
         [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Coupon>> GetDiscount(string productName)
         {
+
+           
             var coupon = await _repository.GetDiscount(productName);
             return Ok(coupon);
         }

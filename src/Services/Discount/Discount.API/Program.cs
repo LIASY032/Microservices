@@ -1,6 +1,9 @@
-﻿using Discount.API.Repositories;
+﻿using Discount.API.Extensions;
+using Discount.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // Add services to the container.
 
@@ -21,6 +24,8 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MigrateDatabase < Program> ();
 
 app.Run();
 
