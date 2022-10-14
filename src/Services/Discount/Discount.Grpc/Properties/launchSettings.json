@@ -1,16 +1,16 @@
 {
-    "profiles": {
-        "Discount.Grpc": {
-            "commandName": "Project",
-            "applicationUrl": "http://localhost:5003",
-            "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            }
-        },
-        "Docker": {
-            "commandName": "Docker",
-            "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-            "publishAllPorts": true
-        }
+  "profiles": {
+    "Discount.Grpc": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:5003",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {}
     }
+  }
 }
