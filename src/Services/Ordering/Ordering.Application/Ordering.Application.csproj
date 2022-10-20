@@ -28,6 +28,7 @@
     <None Remove="Contracts\Persistence\" />
     <None Remove="Contracts\Infrastructure\" />
     <None Remove="Features\Orders\Commands\" />
+    <None Remove="Features\Orders\Commands\CheckoutOrder\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
@@ -42,6 +43,7 @@
     <Folder Include="Contracts\Persistence\" />
     <Folder Include="Contracts\Infrastructure\" />
     <Folder Include="Features\Orders\Commands\" />
+    <Folder Include="Features\Orders\Commands\CheckoutOrder\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
