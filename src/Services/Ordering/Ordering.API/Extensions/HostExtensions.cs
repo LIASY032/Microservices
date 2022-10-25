@@ -25,18 +25,21 @@ namespace Ordering.API.Extensions
 
 
                     logger.LogInformation("Migrated database associated with context {DbContextName}", typeof(TContext).Name);
-                }catch (SqlException ex)
+                }catch (AggregateException err)
                 {
 
-                    logger.LogError(ex, "An Error occurred while migrating the database used on context {DbContextName}", typeof(TContext).Name);
-
-                    if (retryForAvailability < 50)
+                    foreach (var ex in err.InnerExceptions)
                     {
-                        retryForAvailability++;
-                        System.Threading.Thread.Sleep(2000);
-                        MigrateDatabase<TContext>(host, seeder, retryForAvailability);
-                    }
 
+                        logger.LogError(ex, "An Error occurred while migrating the database used on context {DbContextName}", typeof(TContext).Name);
+
+                        if (retryForAvailability < 50)
+                        {
+                            retryForAvailability++;
+                            System.Threading.Thread.Sleep(2000);
+                            MigrateDatabase<TContext>(host, seeder, retryForAvailability);
+                        }
+                    }
 
                 }
                 return host;
