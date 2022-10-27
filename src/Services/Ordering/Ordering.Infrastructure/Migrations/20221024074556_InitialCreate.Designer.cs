@@ -50,7 +50,7 @@ namespace Ordering.Infrastructure.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate").IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EmailAddress")
@@ -71,13 +71,13 @@ namespace Ordering.Infrastructure.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PaymentMethod")
+                    b.Property<int>("PaymentMethod").IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("TotalPrice")
+                    b.Property<decimal>("TotalPrice").IsRequired()
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("UserName")
