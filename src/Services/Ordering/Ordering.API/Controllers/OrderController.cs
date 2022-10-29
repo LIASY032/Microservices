@@ -31,8 +31,12 @@ namespace Ordering.API.Controllers
         public async Task<ActionResult<IEnumerable<OrdersVm>>> GetOrdersByUserName(string userName)
         {
             var query = new GetOrdersListQuery(userName);
-            var orders = await _mediator.Send(query);
-            return Ok(orders);
+            if (query != null)
+            {
+                var orders = await _mediator.Send(query);
+                return Ok(orders);
+            }
+            return NotFound();
         }
 
         // testing purpose
