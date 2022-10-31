@@ -41,6 +41,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Aggregator", "ApiGateways\Shopping.Aggregator\Shopping.Aggregator.csproj", "{35556C25-8DA9-4A6D-AE3B-AC03AD0D14D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{114D9BFE-BEC5-45EC-B364-F48DCA181FBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStoreWebApp", "WebApps\PhoneStoreWebApp\PhoneStoreWebApp.csproj", "{FA78AE52-B8D6-4022-8D37-6AC176A9C254}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +99,10 @@ Global
 		{35556C25-8DA9-4A6D-AE3B-AC03AD0D14D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35556C25-8DA9-4A6D-AE3B-AC03AD0D14D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35556C25-8DA9-4A6D-AE3B-AC03AD0D14D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA78AE52-B8D6-4022-8D37-6AC176A9C254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA78AE52-B8D6-4022-8D37-6AC176A9C254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA78AE52-B8D6-4022-8D37-6AC176A9C254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA78AE52-B8D6-4022-8D37-6AC176A9C254}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,7 @@ Global
 		{418240DC-FF4F-41D7-8683-768C04A0F25D} = {A2CF9BD1-ADFC-431B-8EDC-9CFE1286E8A9}
 		{0D122ACF-7C58-404C-9538-4C9AD7C03003} = {48A9F1A4-E415-4C26-AF08-ECCA41300416}
 		{35556C25-8DA9-4A6D-AE3B-AC03AD0D14D6} = {48A9F1A4-E415-4C26-AF08-ECCA41300416}
+		{FA78AE52-B8D6-4022-8D37-6AC176A9C254} = {114D9BFE-BEC5-45EC-B364-F48DCA181FBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABD08D4D-9C1B-43B3-B876-78ED6B8B0574}
