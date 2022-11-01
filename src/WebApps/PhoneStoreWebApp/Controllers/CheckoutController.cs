@@ -15,43 +15,41 @@ namespace PhoneStoreWebApp.Controllers
     {
         private readonly IBasketService _basketService;
         private readonly IOrderService _orderService;
-        [BindProperty]
-        public BasketCheckoutModel Order { get; set; }
-
-        public BasketModel Cart { get; set; } = new BasketModel();
-
-
-
+        private CheckoutVM checkoutVM;
+    
         public CheckoutController(IBasketService basketService, IOrderService orderService)
         {
             _basketService = basketService ?? throw new ArgumentNullException(nameof(basketService));
             _orderService = orderService ?? throw new ArgumentNullException(nameof(orderService));
+            checkoutVM = new CheckoutVM();
+
         }
         // GET: /<controller>/
         public async Task<IActionResult> Index()
         {
             var userName = "swn";
-            Cart = await _basketService.GetBasket(userName);
+            checkoutVM.Cart = await _basketService.GetBasket(userName);
 
-            return View(Cart);
+            return View(checkoutVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Checkout()
+        public async Task<IActionResult> Checkout(BasketCheckoutModel checkoutModel)
         {
             var userName = "swn";
-            Cart = await _basketService.GetBasket(userName);
+            checkoutVM.Cart = await _basketService.GetBasket(userName);
 
             if (!ModelState.IsValid)
             {
                 return View();
             }
+            checkoutVM.Order = checkoutModel;
 
-            Order.UserName = userName;
-            Order.TotalPrice = Cart.TotalPrice;
+            checkoutVM.Order.UserName = userName;
+            checkoutVM.Order.TotalPrice = checkoutVM.Cart.TotalPrice;
 
-            await _basketService.CheckoutBasket(Order);
-            return View();
+            await _basketService.CheckoutBasket(checkoutVM.Order);
+            return RedirectToAction(nameof (Index));
         }
     }
 }

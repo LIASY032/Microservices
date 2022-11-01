@@ -20,6 +20,7 @@
     <None Remove="Views\Cart\" />
     <None Remove="Views\Order\" />
     <None Remove="Views\Checkout\" />
+    <None Remove="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -27,5 +28,6 @@
     <Folder Include="Views\Cart\" />
     <Folder Include="Views\Order\" />
     <Folder Include="Views\Checkout\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
 </Project>

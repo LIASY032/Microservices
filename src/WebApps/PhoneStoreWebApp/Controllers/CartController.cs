@@ -39,7 +39,7 @@ namespace PhoneStoreWebApp.Controllers
 
             var basketUpdated = await _basketService.UpdateBasket(basket);
 
-            return RedirectToAction(nameof(Index));
+            return View();
         }
     }
 }
