@@ -34,21 +34,22 @@ namespace PhoneStoreWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Checkout(BasketCheckoutModel checkoutModel)
+        public async Task<IActionResult> CheckoutBasket(BasketCheckoutModel checkoutModel)
         {
             var userName = "swn";
+         
+            checkoutVM.Order = checkoutModel;
             checkoutVM.Cart = await _basketService.GetBasket(userName);
+
 
             if (!ModelState.IsValid)
             {
-                return View();
+                return RedirectToAction(nameof(HomeController.Error));
             }
-            checkoutVM.Order = checkoutModel;
 
-            checkoutVM.Order.UserName = userName;
-            checkoutVM.Order.TotalPrice = checkoutVM.Cart.TotalPrice;
 
-            await _basketService.CheckoutBasket(checkoutVM.Order);
+
+            await _basketService.CheckoutBasket(checkoutModel);
             return RedirectToAction(nameof (Index));
         }
     }

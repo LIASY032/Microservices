@@ -70,8 +70,32 @@ namespace PhoneStoreWebApp.Controllers
         }
 
 
+ //       [HttpPost]
+ //       public async Task<IActionResult> AddToCart(string productId) {
+ //           var product = await _catalogService.GetCatalog(productId);
+
+ //           var userName = "swn";
+ //           var basket = await _basketService.GetBasket(userName);
+
+ //           basket.Items.Add(new BasketItemModel
+ //           {
+ //               ProductId = productId,
+ //               ProductName = product.Name,
+ //               Price = product.Price,
+ //               Quantity = productDetail.Quantity,
+ //               Color = productDetail.Color
+ //           });
+
+ //           var basketUpdated = await _basketService.UpdateBasket(basket);
+
+
+
+ //           return View();
+	//}
+
         [HttpPost]
-        public async Task<IActionResult> AddToCart(string productId) {
+        public async Task<IActionResult> AddToCart(string productId, int Quantity, string Color)
+        {
             var product = await _catalogService.GetCatalog(productId);
 
             var userName = "swn";
@@ -82,16 +106,16 @@ namespace PhoneStoreWebApp.Controllers
                 ProductId = productId,
                 ProductName = product.Name,
                 Price = product.Price,
-                Quantity = productDetail.Quantity,
-                Color = productDetail.Color
+                Quantity = Quantity,
+                Color = Color
             });
 
             var basketUpdated = await _basketService.UpdateBasket(basket);
 
 
 
-            return View();
-	}
+            return RedirectToAction(nameof(HomeController.Index)); ;
+        }
     }
 }
 
