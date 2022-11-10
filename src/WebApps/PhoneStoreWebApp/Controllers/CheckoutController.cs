@@ -40,12 +40,13 @@ namespace PhoneStoreWebApp.Controllers
          
             checkoutVM.Order = checkoutModel;
             checkoutVM.Cart = await _basketService.GetBasket(userName);
+            checkoutModel.UserName = userName;
+        
 
-
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction(nameof(HomeController.Error));
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return RedirectToAction(nameof(HomeController.Error));
+            //}
 
 
 
