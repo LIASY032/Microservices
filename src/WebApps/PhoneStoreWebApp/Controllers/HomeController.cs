@@ -22,6 +22,12 @@ public class HomeController : Controller
         return View(ProductList);
     }
 
+
+    public IActionResult Contact() {
+
+        return View();
+    }
+
     public async Task<IActionResult> AddToCart(string productId) {
         var product = await _catalogService.GetCatalog(productId);
 

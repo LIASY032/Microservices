@@ -33,9 +33,10 @@ namespace PhoneStoreWebApp.Services
         public async Task CheckoutBasket(BasketCheckoutModel model)
         {
             var response = await _client.PostAsJson($"/Basket/Checkout", model);
+         
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Something went wrong when calling api.");
+                throw new Exception($"Something went wrong when calling api.{response.StatusCode}, {response.IsSuccessStatusCode}");
             }
         }
     }
