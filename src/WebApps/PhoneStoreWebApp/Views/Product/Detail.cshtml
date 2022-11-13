@@ -52,7 +52,7 @@
                             <label>Quantity :</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="" >
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
@@ -115,3 +115,36 @@
 
     </div>
 </div>
+
+<script type="text/javascript">
+    const quantity_left_minus = document.querySelector(".quantity-left-minus");
+    const quantity_right_plus = document.querySelector(".quantity-right-plus");
+
+    const quantity = document.querySelector("#quantity");
+
+
+
+    quantity_left_minus.addEventListener('click', function (e) {
+
+    const number = +quantity.value;
+        if (number > 1) {
+
+            quantity.value = number - 1;
+
+        }
+    })
+
+    quantity_right_plus.addEventListener('click', function (e) {
+    
+        const number = +quantity.value;
+
+        quantity.value = number + 1;
+
+    })
+
+
+
+
+
+
+</script>
