@@ -39,11 +39,12 @@
                         </li>
                     </ul>
 
-                    <form class="form-inline my-2 my-lg-0">
+                    @using (Html.BeginForm("Search", "Home", FormMethod.Post, new {@class="form-inline my-2 my-lg-0"}))
+                        { 
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" placeholder="Search...">
+                            <input type="text" class="form-control" placeholder="Search..." name="name">
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-secondary btn-number">
+                                <button type="submit" class="btn btn-secondary btn-number">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
@@ -52,7 +53,7 @@
                             <i class="fa fa-shopping-cart"></i> Cart
                             <span class="badge badge-light">3</span>
                         </a>
-                    </form>
+                    }
                 </div>
             </div>
         </nav>

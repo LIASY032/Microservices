@@ -52,6 +52,21 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost]
+    public async Task<IActionResult> Search(string name) {
+
+        if (ProductList.Count() < 1) { 
+	
+            ProductList = await _catalogService.GetCatalog();
+        }
+
+        var newList = ProductList.Where(item => item.Name.Contains(name));
+
+
+        return View(newList);
+    
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
