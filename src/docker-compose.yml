@@ -66,10 +66,17 @@ services:
       context: .
       dockerfile: ApiGateways/Shopping.Aggregator/Dockerfile
 
+  phonestorewebapp:
+    image: ${DOCKER_REGISTRY-}phonestorewebapp
+    build:
+      context: .
+      dockerfile: WebApps/PhoneStoreWebApp/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:
   postgres_data:
   pgadmin_data:
+
 
 
